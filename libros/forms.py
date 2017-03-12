@@ -3,9 +3,9 @@ from django import forms
 from .models import libromodelo
 
 OPCIONES_TIPO = (
+    ('libro', "Libro"),
     ('foto', "Foto"),
     ('video juego', "Video Juego"),
-    ('libro', "Libro"),
 )
 
 class libroAddForms(forms.Form):

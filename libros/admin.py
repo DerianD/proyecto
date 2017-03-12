@@ -6,7 +6,7 @@ from libros.models import libromodelo
 # Register your models here.
 
 class libroadmin(admin.ModelAdmin):
-    list_display = ["ISBN","autor","editorial","precio","nombre","slug"]
+    list_display = ["ISBN","autor","editorial","precio","nombre","tipo"]
     search_field = ["nombre","autor","editorial"]
     list_editable = ["nombre","precio"]
     list_filter = ["nombre","precio"]

@@ -13,6 +13,7 @@ class libromodelo(models.Model):
     ISBN = models.CharField(max_length = 40)
     precio = models.DecimalField(max_digits=9999, decimal_places=2)
     slug = models.SlugField(blank=True)
+    tipo = models.CharField(max_length = 40, blank=True, null=True, default="Libro")
 
     def __unicode__(self):
         return self.nombre

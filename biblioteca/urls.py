@@ -19,14 +19,25 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from libros import views
+from libros.views import LibroListView, LibroDetailView
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^admin/', admin.site.urls),
+    
     url(r'^libros/$', views.lista_libros2, name='libros'),
+    
+    url(r'^libros/lista/$', LibroListView.as_view(), name='List_view'),
+    #url(r'^producto/(?P<object_id>\d+)/$', ProductoDetailView.as_view(), name='detalle_view'),
+    url(r'^libros/(?P<pk>\d+)/$', LibroDetailView.as_view(), name='detalle_view'),
+    url(r'^libros/(?P<slug>[\w-]+)/$', LibroDetailView.as_view(), name='slug_detalle_view'),
+    
     url(r'^detalle/(?P<object_id>\d+)/$', views.detalle_libro, name='detalle'),
+    url(r'^detalle/(?P<object_id>\d+)/editar/$', views.actualizar, name='actualizar'),
     url(r'^detalle/(?P<slug>[\w-]+)/$', views.detalle_s, name='detalle_s'),
     url(r'^detalle/(?P<slug>[\w-]+)/$', views.detalle_slug, name='detalle_slug'),
     url(r'^crear_libro/$', views.agregar_libro, name='nuevo_libro'),
+
+    
 ]
 
