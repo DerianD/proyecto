@@ -37,10 +37,10 @@ def detalle_s(request, slug=None):
         libroclass = get_object_or_404(libromodelo, slug=slug)
     except libromodelo.MultipleObjectsReturned:
         libroclass = libromodelo.objects.filter(slug=slug).order_by("-nombre").first()
-    m = "libro nuevo"
+    m = ""
     template = "detalle.html"
     contexto= {"mensaje":m,
-           "producto": libroclass }
+           "libros": libroclass }
     return render(request, template, contexto)
 
 def detalle_slug(request, slug=None):
@@ -48,10 +48,10 @@ def detalle_slug(request, slug=None):
         libroclass = get_object_or_404(libromodelo, slug=slug)
     except libromodelo.MultipleObjectsReturned:
         libroclass = libromodelo.objects.filter(slug=slug).order_by("-nombre").first()
-    m = "libro nuevo"
+    m = ""
     template = "detalle.html"
     contexto= {"mensaje":m,
-           "producto": libroclass }
+           "libros": libroclass }
     return render(request, template, contexto)
 
 def agregar_libro(request, object_id=None):
