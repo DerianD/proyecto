@@ -38,6 +38,7 @@ class LibroModelForm(forms.ModelForm):
             "nombre",
             "autor",
             "editorial",
+            "ISBN",
             "tipo"
         ]
         labels={

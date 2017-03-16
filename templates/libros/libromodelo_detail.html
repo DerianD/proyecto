@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
 {%block content%}
-  <h1>{{mensaje}}</h1>
+  <h1>Libro</h1>
   <div class="">
-    <h2>{{libromodelo}}</h2>
-    <h2>{{libromodelo.editorial}}</h2>
-    <h2>{{libromodelo.precio}}</h2>
+    <h2>Nombre: {{libromodelo}}</h2>
+    <h2>Autor: {{libromodelo.autor}}</h2>
+    <h2>Editorial: {{libromodelo.editorial}}</h2>
+    <h2>ISBN: {{libromodelo.ISBN}}</h2>
+    <h2>Precio: {{libromodelo.precio}}</h2>
+    <h2>Tipo: {{libromodelo.tipo}}</h2>
 
   </div>
 {%endblock%}
